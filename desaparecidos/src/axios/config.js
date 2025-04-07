@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseLink = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: "https://abitus-api.geia.vip",
   headers: {
     "Content-Type": "application/json",
   },

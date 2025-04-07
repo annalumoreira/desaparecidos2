@@ -1,5 +1,22 @@
 .container {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 2rem auto;
   padding: 0 2rem;
+}
+.container h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.title-h1 {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.icon {
+  margin-right: 1rem;
+  max-width: 4rem;
 }

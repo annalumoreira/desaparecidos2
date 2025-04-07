@@ -8,7 +8,7 @@ function Admin() {
   const [posts, setPosts] = useState([]);
   const getPosts = async () => {
     try {
-      const response = await baseLink.get("/posts");
+      const response = await baseLink.get("/v1/ocorrencias/informacoes-desaparecido");
 
       const data = response.data;
       setPosts(data);

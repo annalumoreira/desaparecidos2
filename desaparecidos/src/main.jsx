@@ -1,16 +1,16 @@
-import { Children, StrictMode } from 'react'
+import React, { Children, StrictMode, lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
-import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
 import {createBrowserRouter, RouterProvider, Router} from 'react-router-dom'
 
-import Home from './routes/Home.jsx'
-import NewPost from './routes/NewPost.jsx'
-import Post from './routes/Post.jsx'
-import Admin from './routes/Admin.jsx'
-import EditPost from './routes/EditPost.jsx'
+const Home = lazy(() => import('./routes/Home.jsx'));
+const NewPost = lazy(() => import('./routes/NewPost.jsx'));
+const Post = lazy(() => import('./routes/Post.jsx'));
+const Admin = lazy(() => import('./routes/Admin.jsx'));
+const EditPost = lazy(() => import('./routes/EditPost.jsx'));
+const PessoaDetalhes = lazy(() => import('./routes/PessoaDetalhe.jsx'));
 
 const router = createBrowserRouter([
   {
@@ -18,24 +18,28 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <Suspense fallback={<div>Carregando página...</div>}><Home /></Suspense>,
       },
       {
         path: '/new',
-        element: <NewPost />,
+        element: <Suspense fallback={<div>Carregando...</div>}><NewPost /></Suspense>,
       },
       {
         path: '/posts/:id',
-        element: <Post />,
+        element: <Suspense fallback={<div>Carregando...</div>}><Post /></Suspense>,
       },
       {
       path: '/admin',
-      element: <Admin/>
+      element: <Suspense fallback={<div>Carregando...</div>}><Admin /></Suspense>
       },
       {
         path: '/posts/edit/:id',
-        element: <EditPost />,
-      }
+        element: <Suspense fallback={<div>Carregando...</div>}><EditPost /></Suspense>,
+      },
+      {
+      path: '/pessoa/:id',
+      element: <Suspense fallback={<div>Carregando...</div>}><PessoaDetalhes /></Suspense>,
+      },
     ]
   }
 ])

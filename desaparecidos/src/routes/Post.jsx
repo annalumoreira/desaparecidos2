@@ -10,7 +10,7 @@ const Post = () => {
 
     const getPost = async () => {
         try { 
-        const response = await baseLink.get(`/posts/${id}`);
+        const response = await baseLink.get(`/pessoa/${id}`);
         const data = response.data;
 
         setPost(data);
