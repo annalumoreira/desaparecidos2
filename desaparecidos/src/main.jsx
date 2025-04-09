@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       element: <Suspense fallback={<div>Carregando...</div>}><PessoaDetalhes /></Suspense>,
       },
       {
-        path: 'v1/ocorrencias/informacoes-desaparecido',
+        path: 'v1/ocorrencias/informacoes-desaparecido/:id',
         element: <Suspense fallback={<div>Carregando...</div>}><PessoaMaisInfo /></Suspense>,
       }
     ]

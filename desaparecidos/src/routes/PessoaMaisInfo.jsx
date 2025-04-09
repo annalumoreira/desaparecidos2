@@ -29,7 +29,7 @@ const { pessoaDetalhe } = location.state || {};
   useEffect(() => {
     const getPessoa = async () => {
       try {
-        const response = await baseLink.get(`/v1/ocorrencias/informacoes-desaparecido?ocorrenciaId=${pessoa?.ultimaOcorrencia?.ocoId}`);
+        const response = await baseLink.get(`/v1/pessoas/${id}`);
         setPessoa(response.data);
       } catch (error) {
         console.log("Erro ao buscar detalhes:", error);
@@ -38,6 +38,7 @@ const { pessoaDetalhe } = location.state || {};
 
     getPessoa();
   }, [id]);
+
 
   const handleImagemChange = (e) => {
     const arquivos = Array.from(e.target.files);

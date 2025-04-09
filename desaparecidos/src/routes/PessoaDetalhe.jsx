@@ -120,7 +120,7 @@ const PessoaDetalhes = () => {
           <img src={backIcon} alt="icone voltar" className="btn-voltar-icon"/>
           Voltar</button>
         {pessoa?.ultimaOcorrencia?.dataLocalizacao === null && (
-        <button className="btnMaisInfos"  onClick={() => navigate(`/v1/ocorrencias/informacoes-desaparecido?ocorrenciaId=${pessoa?.ultimaOcorrencia?.ocoId}`)}>
+        <button className="btnMaisInfos"  onClick={() => navigate(`/v1/ocorrencias/informacoes-desaparecido/${pessoa?.id}`)}>
         <img src={editIcon} alt="icone nome" className="btnMaisInfos-icon"/>
           Tenho mais informações!</button>
           )}
