@@ -18,3 +18,63 @@
   object-fit: contain;
     
   }
+
+  .busca-container {
+    display: flex;
+    gap: 8px;
+    padding: 0 16px 24px;
+  }
+  
+  .campo-busca {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .botao-buscar {
+    background-color: #1976d2;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .botao-buscar:hover {
+    background-color: #115293;
+  }
+  
+  .pessoas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 0 16px;
+  }
+  
+  .paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 32px 0;
+  }
+  
+  .botao-pagina {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .botao-pagina:hover {
+    background-color: #ddd;
+  }
+  
+  .botao-pagina.ativa {
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    border-color: #1976d2;
+  }

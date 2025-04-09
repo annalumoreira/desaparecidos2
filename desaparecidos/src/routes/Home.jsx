@@ -1,35 +1,39 @@
-// Home.jsx
 import React, { useState, useEffect } from 'react';
 import baseLink from '../axios/config';
 import CardPessoa from '../components/cardPessoa';
 import './Home.css';
-import lupaIcon from '../icons/busca.png'; // Importa o ícone da lupa
+import lupaIcon from '../icons/busca.png';
+import Pagination from '../components/Pagination';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [busca, setBusca] = useState('');
+  const [paginaAtual, setPaginaAtual] = useState(0);
+  const [totalPaginas, setTotalPaginas] = useState(0);
 
-  const getPessoas = async (nome = '') => {
+  const getPessoas = async (nome = '', pagina = 1) => {
     try {
       let response;
-
+  
       if (nome) {
-        // Usa o endpoint de filtro com busca por nome
         response = await baseLink.get('/v1/pessoas/aberto/filtro', {
           params: { nome },
         });
-        setPosts(response.data.content); // Se o filtro retorna um array direto
+        setPosts(response.data.content);
+        setTotalPaginas(1);
       } else {
-        // Usa o endpoint padrão
         response = await baseLink.get('/v1/pessoas/aberto', {
           params: {
-            pagina: 0,
-            porPagina: 40,
+            pagina: pagina - 1,
+            porPagina: 12,
             direcao: 'desc',
           },
         });
         setPosts(response.data.content);
+        setTotalPaginas(response.data.totalPages);
       }
+  
+      setPaginaAtual(pagina);
     } catch (error) {
       console.error('Erro ao buscar pessoas:', error);
     }
@@ -39,29 +43,34 @@ const Home = () => {
     getPessoas(); // busca inicial
   }, []);
 
+  const handlePageClick = (pagina) => {
+    getPessoas(busca, pagina);
+  };
+
   return (
     <div className="home">
-      <h2 >
+      <h2>
         <img className="icon-lupa" src={lupaIcon} alt="Lupa" />
-        Buscar</h2>
+        Buscar
+      </h2>
 
-      <div className="px-4 mb-6 flex gap-2">
+      <div className="busca-container">
         <input
           type="text"
           placeholder="Buscar por nome..."
-          className="w-full border border-gray-300 rounded px-3 py-2 shadow-sm"
+          className="campo-busca"
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
         />
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600"
-          onClick={() => getPessoas(busca)}
+          className="botao-buscar"
+          onClick={() => getPessoas(busca, 1)}
         >
           Buscar
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+      <div className="pessoas-grid">
         {posts.length === 0 ? (
           <p>Nenhuma pessoa encontrada</p>
         ) : (
@@ -70,6 +79,13 @@ const Home = () => {
           ))
         )}
       </div>
+      {totalPaginas > 1 && (
+  <Pagination
+    currentPage={paginaAtual}
+    totalPages={totalPaginas}
+    onPageChange={(pagina) => getPessoas(busca, pagina)}
+  />
+)}
     </div>
   );
 };
