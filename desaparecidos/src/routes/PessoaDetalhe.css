@@ -179,37 +179,58 @@
 }
 
 
-.textarea-info {
-  width: 100%;
-  min-height: 120px;
-  margin-bottom: 1rem;
-  padding: 0.8rem;
-  font-size: 1rem;
-  resize: vertical;
+.formMaisInfo {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.label-campo {
+.formMaisInfo h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.formMaisInfo label {
+  display: block;
   font-weight: bold;
   margin-top: 1rem;
-  display: block;
+  margin-bottom: 0.3rem;
+  color: #444;
 }
 
-.grid-imagens {
+.formMaisInfo textarea,
+.formMaisInfo input[type="text"],
+.formMaisInfo input[type="date"],
+.formMaisInfo input[type="file"] {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.grid-imagens-preview {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
 }
 
-.imagem-preview {
+.preview-img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  object-fit: cover;
+  border: 1px solid #ccc;
 }
 
+
 .btn-enviar-info {
-  background-color: #4CAF50;
+  background-color: #263c91;
   color: white;
   padding: 0.5rem 1.2rem;
   border: none;
@@ -219,5 +240,5 @@
 }
 
 .btn-enviar-info:hover {
-  background-color: #45a049;
+  opacity: 0.8;
 }
