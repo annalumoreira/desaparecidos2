@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import baseLink from "../axios/config";
-import "./PessoaDetalhe.css"; // cria esse CSS se quiser estilizar
-import semFoto from "../images/sem-foto.svg"; // Importa a imagem padrão
-import cracha from "../icons/icons8-crachá-48.png"; // I
-import editIcon from "../icons/megafone.png"; // Ícone de editar
-import backIcon from "../icons/voltar.png"; // Ícone de voltar
-import { useNavigate } from "react-router-dom"; // Importa o hook useNavigate
-
+import "./PessoaDetalhe.css"; 
+import semFoto from "../images/sem-foto.svg"; 
+import cracha from "../icons/icons8-crachá-48.png"; 
+import editIcon from "../icons/megafone.png"; 
+import backIcon from "../icons/voltar.png"; 
+import { useNavigate } from "react-router-dom"; 
 
 const PessoaDetalhes = () => {
   const { id } = useParams();
   const [pessoa, setPessoa] = useState(null);
   const navigate = useNavigate();
 
-  const handleIrParaMaisInfo = () => {
-    navigate(`/pessoa/${pessoa.id}/mais-info`, { state: { pessoa } });
-  };
-
-  const formatoData = (data) => {
+   const formatoData = (data) => {
     const partes = data.split("-");
     return `${partes[2]}/${partes[1]}/${partes[0]}`;
   };
@@ -35,7 +30,6 @@ const PessoaDetalhes = () => {
 
     getPessoa();
   }, [id]);
-  
 
   return (
     <div>
@@ -43,7 +37,11 @@ const PessoaDetalhes = () => {
         {pessoa ? (
           <>
             {!pessoa?.urlFoto ? (
-              <img src={semFoto} alt="Imagem padrão" className="detalhePessoaimg"/>
+              <img
+                src={semFoto}
+                alt="Imagem padrão"
+                className="detalhePessoaimg"
+              />
             ) : (
               <img
                 src={pessoa?.urlFoto}
@@ -53,34 +51,36 @@ const PessoaDetalhes = () => {
             )}
             <div>
               <p>
-              <h2
-  className={`statusDesaparecido ${
-    pessoa?.ultimaOcorrencia?.dataLocalizacao ? "localizado" : "desaparecido"
-  }`}
->
-  {pessoa?.ultimaOcorrencia?.dataLocalizacao ? "LOCALIZADO" : "DESAPARECIDO"}
-</h2>
+                <h2
+                  className={`statusDesaparecido ${
+                    pessoa?.ultimaOcorrencia?.dataLocalizacao
+                      ? "localizado"
+                      : "desaparecido"
+                  }`}
+                >
+                  {pessoa?.ultimaOcorrencia?.dataLocalizacao
+                    ? "LOCALIZADO"
+                    : "DESAPARECIDO"}
+                </h2>
                 <p className="titleDetalhes">
-
-              <img src={cracha} alt="icone nome" className="iconsDetalhes" />
-              Informações do Desaparecido
+                  <img
+                    src={cracha}
+                    alt="icone nome"
+                    className="iconsDetalhes"
+                  />
+                  Informações do Desaparecido
                 </p>
               </p>
-              <h3 className="detalhePessoa-name">
-               
-               {pessoa?.nome}
-              </h3>
+              <h3 className="detalhePessoa-name">{pessoa?.nome}</h3>
               <p className="detalhePessoa">
-              
-              {pessoa?.idade} anos, {pessoa?.sexo}</p>
+                {pessoa?.idade} anos, {pessoa?.sexo}
+              </p>
               <p className="detalhePessoa">
-              
                 Local do Desaparecimento:{" "}
                 {pessoa?.ultimaOcorrencia?.localDesaparecimentoConcat ||
                   "Não informado"}
               </p>
               <p className="detalhePessoa">
-              
                 Data do Desaparecimento:{" "}
                 {pessoa?.ultimaOcorrencia?.dtDesaparecimento
                   ? formatoData(
@@ -90,13 +90,11 @@ const PessoaDetalhes = () => {
               </p>
 
               <p className="detalhePessoa">
-             
                 Vestimentas:{" "}
                 {pessoa?.ultimaOcorrencia?.ocorrenciaEntrevDesapDTO
                   ?.vestimentasDesaparecido || "Não informado"}
               </p>
               <p className="detalhePessoa">
-              
                 Informações Adicionais:{" "}
                 {pessoa?.ultimaOcorrencia?.ocorrenciaEntrevDesapDTO
                   ?.informacao || "Não informado"}
@@ -117,13 +115,24 @@ const PessoaDetalhes = () => {
       </div>
       <div className="linhaBotoes">
         <button className="btn-voltar" onClick={() => navigate("/")}>
-          <img src={backIcon} alt="icone voltar" className="btn-voltar-icon"/>
-          Voltar</button>
+          <img src={backIcon} alt="icone voltar" className="btn-voltar-icon" />
+          Voltar
+        </button>
         {pessoa?.ultimaOcorrencia?.dataLocalizacao === null && (
-        <button className="btnMaisInfos"  onClick={() => navigate(`/v1/ocorrencias/informacoes-desaparecido/${pessoa?.id}`)}>
-        <img src={editIcon} alt="icone nome" className="btnMaisInfos-icon"/>
-          Tenho mais informações!</button>
-          )}
+          <button
+            className="btnMaisInfos"
+            onClick={() =>
+              navigate(`/v1/ocorrencias/informacoes-desaparecido/${pessoa?.id}`)
+            }
+          >
+            <img
+              src={editIcon}
+              alt="icone nome"
+              className="btnMaisInfos-icon"
+            />
+            Tenho mais informações!
+          </button>
+        )}
       </div>
     </div>
   );

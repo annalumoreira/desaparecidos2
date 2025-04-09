@@ -208,3 +208,16 @@
   object-fit: cover;
 }
 
+.btn-enviar-info {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.btn-enviar-info:hover {
+  background-color: #45a049;
+}
