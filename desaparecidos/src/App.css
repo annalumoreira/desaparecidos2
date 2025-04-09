@@ -1,3 +1,4 @@
+
 .container {
   max-width: 100%;
   margin: 2rem auto;
@@ -9,14 +10,18 @@
 }
 
 .title-h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 3rem;
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
   padding: 2rem;
+  font-weight: bold;
 }
 
 .icon {
   margin-right: 1rem;
-  max-width: 4rem;
+  width: 50px; /* Set a specific width */
+  height: 50px; 
+  object-fit: contain;
 }

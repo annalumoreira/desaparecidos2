@@ -9,15 +9,11 @@ const Navbar = () => {
            <Link to={'/'}>Desaparecidos</Link>
         </h2>
         <ul>
+           
             <li>
-               <Link to={'/'}>Home</Link>
+                <Link to={'/'} className='new-btn'>Home</Link>
             </li>
-            <li>
-                <Link to={'/new'} className='new-btn'>New Post</Link>
-            </li>
-            <li>
-              <Link to={'/admin'}>Gerenciar</Link>
-              </li>
+           
         </ul>
     </nav>
   )

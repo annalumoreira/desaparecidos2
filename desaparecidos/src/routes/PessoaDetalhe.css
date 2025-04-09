@@ -1,0 +1,210 @@
+.detalhes {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 1rem auto;
+  width: 100%;
+  height: 100%;
+}
+
+.statusDesaparecido {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: rgb(196, 35, 35);
+  color: white;
+
+  border-radius: 50px;
+}
+
+.statusDesaparecido.desaparecido {
+  background-color: rgb(196, 35, 35);
+}
+
+.statusDesaparecido.localizado {
+  background-color: green;
+}
+
+.statusDesaparecido {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: green;
+  color: white;
+
+  border-radius: 50px;
+}
+
+.detalhePessoa {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  width: 100%;
+  font-size: 1.5rem;
+  color: #263c91;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 1px;
+  margin: 1rem auto;
+}
+
+.detalhePessoa-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  width: 100%;
+  font-size: 3rem; /* Increased font size */
+  color: #263c91; /* Darker gray color */
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 1px;
+  margin: 1rem auto;
+}
+
+.iconsDetalhes {
+  width: 50px; /* Set a specific width */
+  height: 50px; /* Set a specific height */
+  margin-right: 1rem;
+  object-fit: contain; /* Ensures the icon retains its aspect ratio */
+}
+.detalhePessoaimg {
+  max-width: 600px;
+  max-height: 600px;
+  margin-right: 1rem;
+  border-radius: 10px;
+  object-fit: contain; /* Ensures the image retains its original aspect ratio */
+  border: 2px solid #263c91; /* Red border for "desaparecido" */
+}
+
+.titleDetalhes {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  width: 100%;
+  font-size: 2rem; /* Increased font size */
+  color: #9c9c9c; /* Darker gray color */
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 1px;
+  margin: 1rem auto;
+}
+
+.btnMaisInfos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  font-size: 1.5rem; /* Increased font size */
+  color: #ffffff; /* Darker gray color */
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  border: none;
+  
+
+  background-color: rgb(196, 35, 35); /* Darker gray color */
+  &:hover {
+    opacity: 80%; /* Darker gray color */
+    cursor: pointer;
+  }
+}
+
+.btnMaisInfos-icon {
+  margin-right: 1rem;
+  padding: 1rem auto;
+  max-width: 2rem; /* Set a specific width */
+  max-height: 2rem; /* Set a specific height */
+  object-fit: contain; /* Ensures the icon retains its aspect ratio */
+}
+
+.btn-voltar {
+  background-color: #263c91;
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  font-size: 1.5rem;
+  border: none;
+
+  
+  &:hover {
+    opacity: 80%; /* Darker gray color */
+    cursor: pointer;
+  }
+}
+
+
+.btn-voltar-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    max-width: 2rem; /* Set a specific width */
+    
+}
+
+.linhaBotoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ 
+  font-size: 1.5rem; /* Increased font size */
+  color: #ffffff; /* Darker gray color */
+  border-radius: 10px;
+
+  padding-right: 2rem;
+
+
+}
+
+
+.textarea-info {
+  width: 100%;
+  min-height: 120px;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.label-campo {
+  font-weight: bold;
+  margin-top: 1rem;
+  display: block;
+}
+
+.grid-imagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.imagem-preview {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+

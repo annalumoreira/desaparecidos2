@@ -1,13 +1,13 @@
-@import "tailwindcss";
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 body {
-  background-color: #1d222e;
-  color: #fff;
+  background-color: #E9F1FA;
+  color: #263c91;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -28,5 +28,5 @@ a:hover {
 }
 
 p {
-  color: #a9abb3;
+  color: #263c91;
 }

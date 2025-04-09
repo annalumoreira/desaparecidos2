@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import retratoIcon from "./icons/retrato.svg"
+import retratoIcon from "./icons/missing.png"
 
 import './App.css'
 

@@ -12,5 +12,9 @@
 
   .icon-lupa {
     margin-right: 1rem;
-    max-width: 1.5rem;
+    max-width: 2rem;
+    width: 50px; /* Set a specific width */
+  height: 50px; 
+  object-fit: contain;
+    
   }

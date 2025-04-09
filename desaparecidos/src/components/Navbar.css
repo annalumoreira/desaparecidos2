@@ -3,11 +3,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: #10131e;
+    background-color:#263c91;
+
 }
 
 .navbar h2 a {
     opacity: 1;
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .navbar ul {

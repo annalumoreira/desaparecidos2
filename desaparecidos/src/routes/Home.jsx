@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import baseLink from '../axios/config';
 import CardPessoa from '../components/cardPessoa';
 import './Home.css';
-import lupaIcon from '../icons/lupa.svg'; // Importa o ícone da lupa
+import lupaIcon from '../icons/busca.png'; // Importa o ícone da lupa
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
